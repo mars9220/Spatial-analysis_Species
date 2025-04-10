@@ -8,7 +8,7 @@ csv_file = f'/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/國�
 df = pd.read_csv(csv_file)
 
 # 2. 連接 SQLite 資料庫（若無則自動建立）
-db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology.sqlite" 
+db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology-all.sqlite" 
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
 
