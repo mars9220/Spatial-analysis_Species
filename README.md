@@ -1,2 +1,18 @@
-# Spatial-analysis_geopandas
+# Spatial-analysis_species
 
+使用農業部生物多樣性研究所「台灣生物多樣性網絡資料」分析區域是否存在國內紅皮書受脅評估為瀕危(CR)、極危(EN) 或易危(VU) 等級的動植物。將物種劃分四分位數,並分別訂為物種敏感度VH、H、M、L。希望藉此來分析目標場域內的物種敏感度，
+操作步驟為抓取近10年內的1km網格資料，透過國內紅皮書篩選出受威脅的物種，建立對應資料庫，以利後續的場域資料分析。
+
+1. 資料清洗 ＆ 建立資料庫：
+- 從「台灣生物多樣性網絡資料」篩選 2015/03 - 2025/03 的 1km 網格物種資料，校正資料夾名稱。
+- 製作資料庫"biology-all.sqlite"，並建立對應的 紅皮書物種名稱table 與 各物種資料庫。
+- 跑 "csv2sql-name.py" 可以將 '國內紅皮書-名錄/data.csv' 轉至SQL。
+  table_name = '國內紅皮書名錄'，欄位依序為 「物種UUID,分類階層,類群,科,科中文名,分類群學名,分類群俗名,簡學名,特有性,原生性,保育類等級,國內紅皮書評估類別」
+- 跑 “csv2sql-Batchfile.py”將各物種資料夾中'gridtaxon-1km-raw.csv'，依照物種名稱命名table。
+  內有物種資訊與格點資訊：
+            "grid_id": 網格編號, "grid_minx": 最小經度, "grid_miny": 最小緯度, "grid_maxx": 最大經度, "grid_maxy": 最大緯度,...
+            "taxon_uuid": 物種TBN UUID,"taxon_name_scientific_simple": 簡學名, "taxon_name_tw": 中文俗名
+  
+2. 透過資料庫篩選資料，繪製出空間資料情形：
+- 跑 "plot-count-sql-Batchfile.py": 透過 table_name=國內紅皮書名錄 篩選受脅評估為瀕危(CR)、極危(EN) 或易危(VU) 等級的「物種UUID」，並利用計算同網格的數量。透過在將同網格的透過位置資訊轉換成多邊形網格，繪製出對應的空間資料結果。最後以台灣為底圖，繪製出對應的空間資訊。
+/fig1 
