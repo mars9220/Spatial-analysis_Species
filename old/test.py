@@ -5,7 +5,7 @@ import seaborn as sns
 from shapely.geometry import Polygon
 
 # 讀取 CSV 檔案
-csv_file = '/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/蝦蟹類/蝦蟹類-data.csv'  # 請替換成你的 CSV 檔案路徑
+csv_file = '/GIS/物種多樣性/蝦蟹類/蝦蟹類-data.csv'  # 請替換成你的 CSV 檔案路徑
 df = pd.read_csv(csv_file)
 
 
