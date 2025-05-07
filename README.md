@@ -64,9 +64,16 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 - 從「台灣生物多樣性網絡資料」篩選 2015/03 - 2025/03 的 1km 網格物種資料，校正資料夾名稱。
 - 製作資料庫"biology-all.sqlite"，並建立對應的 紅皮書物種名稱table 與 各物種資料庫。
 - 跑 [csv2sql-name.py](/csv2sql-name.py)可以將 '國內紅皮書-名錄/data.csv' 轉至SQL。
-  table_name = '國內紅皮書名錄'，欄位依序為 「物種UUID,分類階層,類群,科,科中文名,分類群學名,分類群俗名,簡學名,特有性,原生性,保育類等級,國內紅皮書評估類別」
+  table_name = '國內紅皮書名錄'，
+
+  欄位依序為:
+
+    * 物種UUID,分類階層,類群,科,科中文名,分類群學名,分類群俗名,簡學名,特有性,原生性,保育類等級,國內紅皮書評估類別
+      
 - 跑 [csv2sql-Batchfile.py](/csv2sql-Batchfile.py)將各物種資料夾中'gridtaxon-1km-raw.csv'，依照物種名稱命名table。
+  
   內有物種資訊與格點資訊：
+  
             * "grid_id": 網格編號,
             * "grid_minx": 最小經度, "grid_miny": 最小緯度, "grid_maxx": 最大經度, "grid_maxy": 最大緯度,...
             * "taxon_uuid": 物種TBN UUID,"taxon_name_scientific_simple": 簡學名, "taxon_name_tw": 中文俗名
