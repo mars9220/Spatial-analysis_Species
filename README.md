@@ -41,7 +41,7 @@ Output: <img src="Figure_1.png" width=40% >
 
 * Execute [read-plot-histogram.py](/read-plot-histogram.py) to generate histograms of species occurrence across grids.
 * Analyze distribution patterns to optimize spatial representation.
-  **Output: <img src="Figure_2.png" width=40% >**
+Output: <img src="Figure_2.png" width=40% >
 
 ### 4. Target Area Analysis
 
@@ -76,6 +76,6 @@ Output: <img src="Figure_1.png" width=40% >
   ![/figure2]/Figure_2.png
 
 3. 目標場域的周遭情況分析，透過目標場域的位置，跟網格做疊加分析，篩選出可能受影響的物種所在網格。
-   - 跑“sort-spaitial-joined.py"篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
+ - 跑“sort-spaitial-joined.py"篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
 
 
