@@ -85,7 +85,7 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 3. 直方圖統計分析
 - 跑 [read-plot-histogram.py](/read-plot-histogram.py): 繪製格點分佈的直方圖，分析適合的統計分析，用於空間呈現上的優化。
 
-<img src="/image/Figure_2.png" width=40% >
+      <img src="/image/Figure_2.png" width=40% >
 
 4. 目標場域的周遭情況分析，透過目標場域的位置，跟網格做疊加分析，篩選出可能受影響的物種所在網格。
  - 跑[sort-spatial-joined.py](/sort-spaitial-joined.py)篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
