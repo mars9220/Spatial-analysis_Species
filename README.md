@@ -67,8 +67,9 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
   table_name = '國內紅皮書名錄'，欄位依序為 「物種UUID,分類階層,類群,科,科中文名,分類群學名,分類群俗名,簡學名,特有性,原生性,保育類等級,國內紅皮書評估類別」
 - 跑 [csv2sql-Batchfile.py](/csv2sql-Batchfile.py)將各物種資料夾中'gridtaxon-1km-raw.csv'，依照物種名稱命名table。
   內有物種資訊與格點資訊：
-            "grid_id": 網格編號, "grid_minx": 最小經度, "grid_miny": 最小緯度, "grid_maxx": 最大經度, "grid_maxy": 最大緯度,...
-            "taxon_uuid": 物種TBN UUID,"taxon_name_scientific_simple": 簡學名, "taxon_name_tw": 中文俗名
+            * "grid_id": 網格編號,
+            * "grid_minx": 最小經度, "grid_miny": 最小緯度, "grid_maxx": 最大經度, "grid_maxy": 最大緯度,...
+            * "taxon_uuid": 物種TBN UUID,"taxon_name_scientific_simple": 簡學名, "taxon_name_tw": 中文俗名
   
 2. 透過資料庫篩選資料，繪製出空間資料情形：
 - 跑 [plot-count-sql-Batchfile.py](/plot-count-sql-Batchfile.py): 透過 table_name=國內紅皮書名錄 篩選受脅評估為瀕危(CR)、極危(EN) 或易危(VU) 等級的「物種UUID」，並利用計算同網格的數量。透過在將同網格的透過位置資訊轉換成多邊形網格，繪製出對應的空間資料結果。最後以台灣為底圖，繪製出對應的空間資訊。
