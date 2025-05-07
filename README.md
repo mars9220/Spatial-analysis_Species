@@ -22,3 +22,57 @@
 
 3. 目標場域的周遭情況分析，透過目標場域的位置，跟網格做疊加分析，篩選出可能受影響的物種所在網格。
    - 跑“sort-spaitial-joined.py"篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
+
+
+# Biodiversity Sensitivity Analysis in Taiwan
+
+This project leverages the data from the **Taiwan Biodiversity Network Database** provided by the Agricultural Research Institute to analyze the presence of threatened species (CR, EN, VU) as listed in the Domestic Red List. The objective is to assess species sensitivity in specific target areas by classifying species into four quartiles: VH (Very High), H (High), M (Medium), and L (Low). This approach aims to support spatial analysis for conservation and land management purposes.
+
+## Workflow
+
+### 1. Data Collection and Database Creation
+
+* Extract data from the Taiwan Biodiversity Network Database for the period **March 2015 - March 2025**, focusing on 1km grid species data.
+* Adjust the folder names for data consistency.
+* Create a SQLite database `biology-all.sqlite` to store species data and Red List information.
+
+**Data Processing Steps:**
+
+* Run `csv2sql-name.py` to convert `國內紅皮書-名錄/data.csv` into a SQL table named `國內紅皮書名錄`.
+
+  * Columns include:
+
+    * `UUID`, `Classification Level`, `Taxon`, `Family`, `Family (Chinese)`, `Scientific Name`, `Common Name (Chinese)`, `Simple Scientific Name`, `Endemic Status`, `Native Status`, `Conservation Level`, `Red List Category`
+
+* Execute `csv2sql-Batchfile.py` to create tables for each species based on the grid data found in `gridtaxon-1km-raw.csv`.
+
+  * Columns include:
+
+    * `grid_id`: Grid identifier
+    * `grid_minx`, `grid_miny`, `grid_maxx`, `grid_maxy`: Bounding box coordinates
+    * `taxon_uuid`: Species UUID
+    * `taxon_name_scientific_simple`: Simple scientific name
+    * `taxon_name_tw`: Common name in Chinese
+
+### 2. Data Filtering and Spatial Analysis
+
+* Identify threatened species by querying the Red List data.
+* Filter species with CR, EN, or VU status using `plot-count-sql-Batchfile.py`.
+* Aggregate species data by grid and calculate occurrence counts.
+* Convert grid data to polygon shapes for spatial visualization.
+* Visualize the spatial distribution of threatened species using the base map of Taiwan. **Output: `/Figure_1`**
+
+### 3. Histogram Analysis
+
+* Execute `read-plot-histogram.py` to generate histograms of species occurrence across grids.
+* Analyze distribution patterns to optimize spatial representation. **Output: `/Figure_2.png`**
+
+### 4. Target Area Analysis
+
+* Overlay the target area with grid data to assess potentially impacted species.
+* Run `sort-spatial-joined.py` to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
+
+---
+
+By structuring the analysis workflow in these steps, the project provides a systematic approach to assess biodiversity sensitivity and visualize the spatial distribution of threatened species effectively. For detailed code implementation and data processing guidelines, refer to the respective Python scripts provided in the repository.
+
