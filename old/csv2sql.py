@@ -4,11 +4,11 @@ import pandas as pd
 
 # 1. 讀取 CSV 檔案 & table名稱
 table_name = '哺乳類物種網格'
-csv_file = f'/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/{table_name}/gridtaxon-1km-raw.csv' # 替換成你的 CSV 檔案
+csv_file = f'/GIS/物種多樣性/{table_name}/gridtaxon-1km-raw.csv' # 替換成你的 CSV 檔案
 df = pd.read_csv(csv_file)
 
 # 2. 連接 SQLite 資料庫（若無則自動建立）
-db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology.sqlite" 
+db_file = "/GIS/物種多樣性/biology.sqlite" 
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
 
