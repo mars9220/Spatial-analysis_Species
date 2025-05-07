@@ -72,7 +72,7 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
   
 2. 透過資料庫篩選資料，繪製出空間資料情形：
 - 跑 [plot-count-sql-Batchfile.py](/plot-count-sql-Batchfile.py): 透過 table_name=國內紅皮書名錄 篩選受脅評估為瀕危(CR)、極危(EN) 或易危(VU) 等級的「物種UUID」，並利用計算同網格的數量。透過在將同網格的透過位置資訊轉換成多邊形網格，繪製出對應的空間資料結果。最後以台灣為底圖，繪製出對應的空間資訊。
-<img src="Figure_2.png" width=40% >
+<img src="Figure_1.png" width=40% >
 
 3. 直方圖統計分析
 - 跑 [read-plot-histogram.py](/read-plot-histogram.py): 繪製格點分佈的直方圖，分析適合的統計分析，用於空間呈現上的優化。
