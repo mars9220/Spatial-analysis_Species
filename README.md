@@ -18,7 +18,7 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 
     * `UUID`, `Classification Level`, `Taxon`, `Family`, `Family (Chinese)`, `Scientific Name`, `Common Name (Chinese)`, `Simple Scientific Name`, `Endemic Status`, `Native Status`, `Conservation Level`, `Red List Category`
 
-* Execute [csv2sql-Batchfile.py](/csv2sql-Batchfile.py) to create tables for each species based on the grid data found in `gridtaxon-1km-raw.csv`.
+* Execute [csv2sql-Batchfile.py](/csv2sql-Batchfile.py) to create tables for each species based on the grid data found in `gridtaxon-1km-raw.csv` and [table-name](/tables.json).
 
   * Columns include:
 
@@ -50,7 +50,8 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 
 * Overlay the target area with grid data to assess potentially impacted species.
 * Run [sort-spatial-joined.py](/sort-spaitial-joined.py) to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
-
+  
+<img src="/image/Figure_3.png" width=40% >
 
 
 
@@ -92,4 +93,5 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 4. 目標場域的周遭情況分析，透過目標場域的位置，跟網格做疊加分析，篩選出可能受影響的物種所在網格。
  - 跑[sort-spatial-joined.py](/sort-spaitial-joined.py)篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
 
+<img src="/image/Figure_3.png" width=40% >
 
