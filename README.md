@@ -38,7 +38,7 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 
 **Data Processing Steps:**
 
-* Run `csv2sql-name.py` to convert `國內紅皮書-名錄/data.csv` into a SQL table named `國內紅皮書名錄`.
+* Run [csv2sql-name.py](/csv2sql-name.py) to convert `國內紅皮書-名錄/data.csv` into a SQL table named `國內紅皮書名錄`.
 
   * Columns include:
 
@@ -71,8 +71,3 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 
 * Overlay the target area with grid data to assess potentially impacted species.
 * Run `sort-spatial-joined.py` to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
-
----
-
-By structuring the analysis workflow in these steps, the project provides a systematic approach to assess biodiversity sensitivity and visualize the spatial distribution of threatened species effectively. For detailed code implementation and data processing guidelines, refer to the respective Python scripts provided in the repository.
-
