@@ -5,9 +5,9 @@ import json
 
 # 1. 讀取 GeoJSON 檔案
 layer1 = gpd.read_file(
-    "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/Species-Spaitial-total-count.geojson"
+    "/GIS/物種多樣性/Species-Spaitial-total-count.geojson"
 )
-layer2 = gpd.read_file("/Users/jue-ying/Desktop/Data-Science-Class/GIS/TSMC/TSMC-loc-3-Buffered.geojson")
+layer2 = gpd.read_file("/GIS/TSMC/TSMC-loc-3-Buffered.geojson")
 
 # 2. 執行空間相交 (Spatial Join)
 joined_data = gpd.sjoin(layer1, layer2, how="inner", predicate="intersects")
@@ -27,7 +27,7 @@ with open("tables.json", "r") as file:
     table_names = data["table_names"]
 
 # 6. 連接 SQLite
-db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology-all.sqlite"
+db_file = "/GIS/物種多樣性/biology-all.sqlite"
 conn = sqlite3.connect(db_file)
 
 # 7. 收集所有 `grid_id`，避免重複查詢
@@ -68,9 +68,9 @@ if all_results:
 
     # 11. 儲存為 CSV
     final_df.to_csv("joined-company-species-loc3.csv", index=False, encoding="utf-8")
-    print(f"✅ 結果已儲存至 'joined-company-species-loc3.csv'，共 {len(final_df)} 筆資料。")
+    print(f"結果已儲存至 'joined-company-species-loc3.csv'，共 {len(final_df)} 筆資料。")
 else:
-    print("⚠️ 沒有符合條件的資料！")
+    print("沒有符合條件的資料！")
 
 # 12. 關閉資料庫連線
 conn.close()
