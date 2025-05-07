@@ -36,13 +36,13 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 * Convert grid data to polygon shapes for spatial visualization.
 * Visualize the spatial distribution of threatened species using the base map of Taiwan.
 
-<img src="Figure_1.png" width=40% >
+<img src="/image/Figure_1.png" width=40% >
 
 ### 3. Histogram Analysis
 
 * Execute [read-plot-histogram.py](/read-plot-histogram.py) to generate histograms of species occurrence across grids.
 * Analyze distribution patterns to optimize spatial representation.
-<img src="Figure_2.png" width=40% >
+<img src="/image/Figure_2.png" width=40% >
 
 
 ### 4. Target Area Analysis
@@ -80,11 +80,11 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
   
 2. 透過資料庫篩選資料，繪製出空間資料情形：
 - 跑 [plot-count-sql-Batchfile.py](/plot-count-sql-Batchfile.py): 透過 table_name=國內紅皮書名錄 篩選受脅評估為瀕危(CR)、極危(EN) 或易危(VU) 等級的「物種UUID」，並利用計算同網格的數量。透過在將同網格的透過位置資訊轉換成多邊形網格，繪製出對應的空間資料結果。最後以台灣為底圖，繪製出對應的空間資訊。
-<img src="Figure_1.png" width=40% >
+<img src="/image/Figure_1.png" width=40% >
 
 3. 直方圖統計分析
 - 跑 [read-plot-histogram.py](/read-plot-histogram.py): 繪製格點分佈的直方圖，分析適合的統計分析，用於空間呈現上的優化。
-  <img src="Figure_2.png" width=40% >
+  <img src="/image/Figure_2.png" width=40% >
 
 4. 目標場域的周遭情況分析，透過目標場域的位置，跟網格做疊加分析，篩選出可能受影響的物種所在網格。
  - 跑[sort-spatial-joined.py](/sort-spaitial-joined.py)篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
