@@ -5,7 +5,7 @@ import json
 
 
 # 建立資料庫連線
-db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology-all.sqlite"
+db_file = "/GIS/物種多樣性/biology-all.sqlite"
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
 
@@ -18,7 +18,7 @@ with open("tables.json", "r") as file:
 for table_name in file_name:
     print(table_name)
     # 替換成你的 CSV 檔案
-    file = f"/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/{table_name}/gridtaxon-1km-raw.csv"
+    file = f"/GIS/物種多樣性/{table_name}/gridtaxon-1km-raw.csv"
     df = pd.read_csv(file)
     df.to_sql(table_name, conn, if_exists="append", index=False)
 
