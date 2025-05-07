@@ -31,10 +31,10 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 ### 2. Data Filtering and Spatial Analysis
 
 * Identify threatened species by querying the Red List data.
-* Filter species with CR, EN, or VU status using `plot-count-sql-Batchfile.py`.
+* Filter species with CR, EN, or VU status using [plot-count-sql-Batchfile.py](/plot-count-sql-Batchfile.py).
 * Aggregate species data by grid and calculate occurrence counts.
 * Convert grid data to polygon shapes for spatial visualization.
-* Visualize the spatial distribution of threatened species using the base map of Taiwan. **Output: `/Figure_1`**
+* Visualize the spatial distribution of threatened species using the base map of Taiwan. **Output: ![Figure_1](/Figure_1.png)
 
 ### 3. Histogram Analysis
 
@@ -47,7 +47,9 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 * Run `sort-spatial-joined.py` to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
 
 
-# Spatial-analysis_species
+
+
+## 物種敏感度空間分析
 
 使用農業部生物多樣性研究所「台灣生物多樣性網絡資料」分析區域是否存在國內紅皮書受脅評估為瀕危(CR)、極危(EN) 或易危(VU) 等級的動植物。將物種劃分四分位數,並分別訂為物種敏感度VH、H、M、L。希望藉此來分析目標場域內的物種敏感度，
 操作步驟為抓取近10年內的1km網格資料，透過國內紅皮書篩選出受威脅的物種，建立對應資料庫，以利後續的場域資料分析。
