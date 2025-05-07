@@ -4,15 +4,15 @@ import pandas as pd
 
 # 1. 讀取 CSV 檔案 & table名稱
 table_name = '國內紅皮書名錄'
-csv_file = f'/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/國內紅皮書-名錄/data.csv' # 替換成你的 CSV 檔案
+csv_file = f'/GIS/物種多樣性/國內紅皮書-名錄/data.csv' 
 df = pd.read_csv(csv_file)
 
 # 2. 連接 SQLite 資料庫（若無則自動建立）
-db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology-all.sqlite" 
+db_file = "/GIS/物種多樣性/biology-all.sqlite" 
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
 
-# 3. 建立 SQL 資料表（假設 CSV 欄位為 id, name, age）
+# 3. 建立 SQL 資料表
 cursor.execute(f"""
     CREATE TABLE IF NOT EXISTS {table_name} (
         物種UUID, 分類階層, 類群, 科, 科中文名,
