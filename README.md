@@ -35,7 +35,7 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 * Aggregate species data by grid and calculate occurrence counts.
 * Convert grid data to polygon shapes for spatial visualization.
 * Visualize the spatial distribution of threatened species using the base map of Taiwan.
-  **Output: <img src="Figure_1.png" width=40% > **
+Output: <img src="Figure_1.png" width=40% >
 
 ### 3. Histogram Analysis
 
