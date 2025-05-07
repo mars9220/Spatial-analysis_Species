@@ -34,18 +34,22 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 * Filter species with CR, EN, or VU status using [plot-count-sql-Batchfile.py](/plot-count-sql-Batchfile.py).
 * Aggregate species data by grid and calculate occurrence counts.
 * Convert grid data to polygon shapes for spatial visualization.
-* Visualize the spatial distribution of threatened species using the base map of Taiwan. **Output: <img src="Figure_1.png" width=40% > **
+* Visualize the spatial distribution of threatened species using the base map of Taiwan.
+  **Output: <img src="Figure_1.png" width=40% > **
 
 ### 3. Histogram Analysis
 
 * Execute [read-plot-histogram.py](/read-plot-histogram.py) to generate histograms of species occurrence across grids.
-* Analyze distribution patterns to optimize spatial representation. **Output: <img src="Figure_2.png" width=40% >**
+* Analyze distribution patterns to optimize spatial representation.
+  **Output: <img src="Figure_2.png" width=40% >**
 
 ### 4. Target Area Analysis
 
 * Overlay the target area with grid data to assess potentially impacted species.
 * Run [sort-spatial-joined.py](/sort-spatial-joined.py) to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
-
+*
+*
+*
 
 
 
