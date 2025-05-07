@@ -48,7 +48,7 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 ### 4. Target Area Analysis
 
 * Overlay the target area with grid data to assess potentially impacted species.
-* Run [sort-spatial-joined.py](/sort-spatial-joined.py) to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
+* Run [sort-spatial-joined.py](/sort-spaitial-joined.py) to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
 
 
 
@@ -87,6 +87,6 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
   <img src="Figure_2.png" width=40% >
 
 4. 目標場域的周遭情況分析，透過目標場域的位置，跟網格做疊加分析，篩選出可能受影響的物種所在網格。
- - 跑[sort-spatial-joined.py](/sort-spatial-joined.py)篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
+ - 跑[sort-spatial-joined.py](/sort-spaitial-joined.py)篩選出受影響的網格資料，並輸出成 CSV 以利於用 QGIS 做空間分析。
 
 
