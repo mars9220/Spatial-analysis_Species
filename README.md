@@ -36,15 +36,14 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 * Convert grid data to polygon shapes for spatial visualization.
 * Visualize the spatial distribution of threatened species using the base map of Taiwan.
 
-Output: <img src="Figure_1.png" width=40% >
+<img src="Figure_1.png" width=40% >
 
 ### 3. Histogram Analysis
 
 * Execute [read-plot-histogram.py](/read-plot-histogram.py) to generate histograms of species occurrence across grids.
 * Analyze distribution patterns to optimize spatial representation.
-```
-Output: <img src="Figure_2.png" width=40% >
-```
+<img src="Figure_2.png" width=40% >
+
 
 ### 4. Target Area Analysis
 
