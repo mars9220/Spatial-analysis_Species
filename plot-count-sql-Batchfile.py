@@ -12,7 +12,7 @@ import json
 from matplotlib.colors import Normalize
 from matplotlib.cm import viridis
 
-db_file = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/物種多樣性/biology-all.sqlite"
+db_file = "/GIS/物種多樣性/biology-all.sqlite"
 conn = sqlite3.connect(db_file)
 
 # 從 JSON 檔案讀取表格名稱
@@ -77,8 +77,8 @@ gdf["total_count"] = gdf["total_count"].astype(float)
 
 ########
 
-# 繪製地圖 (與之前相同)
-taiwan_geojson = "/Users/jue-ying/Desktop/Data-Science-Class/GIS/Layers/Geojson_WGS84/Taiwan-County_WGS84.geojson"
+# 繪製地圖 
+taiwan_geojson = "/GIS/Layers/Geojson_WGS84/Taiwan-County_WGS84.geojson"
 taiwan_gdf = gpd.read_file(taiwan_geojson)
 
 fig, ax = plt.subplots(figsize=(10, 8))
