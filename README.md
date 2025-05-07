@@ -49,9 +49,9 @@ This project leverages the data from the **Taiwan Biodiversity Network Database*
 
 * Overlay the target area with grid data to assess potentially impacted species.
 * Run [sort-spatial-joined.py](/sort-spatial-joined.py) to extract affected grids and output the data as a CSV file for further spatial analysis in QGIS.
-*
-*
-*
+
+\
+\
 
 
 
